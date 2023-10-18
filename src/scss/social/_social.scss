@@ -1,6 +1,53 @@
-@use 'base/variables'as v;
-@use 'base/mixins'as m;
+@use "base/variables" as v;
+@use "base/mixins" as m;
 
-.sociales{
-    
+.sociales {
+    margin: 5rem 0;
+
+    @include m.tablet {
+        margin: 0;
+    }
+
+    &__enlace {
+        &::before {
+            content: "";
+            padding: 2rem;
+            display: inline-block;
+        }
+        // ? el asterico indica que  buscara un href que contengo facebook.com
+        &[href*="facebook.com"]::before {
+            background-image: url(../img/icono_facebook.svg);
+        }
+        &[href*="twitter.com"]::before {
+            background-image: url(../img/icono_twitter.svg);
+        }
+        &[href*="instagram.com"]::before {
+            background-image: url(../img/icono_instagram.svg);
+        }
+        &[href*="pincterest.com"]::before {
+            background-image: url(../img/icono_pinterest.svg);
+        }
+        
+        &[href*="youtube.com"]::before {
+            background-image: url(../img/icono_youtube.svg);
+        }
+        &[href*="tiktok.com"]::before {
+            background-image: url(../img/icono_tiktok.svg);
+        }
+    }
+    &__accesibles{
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+        display: block;
+
+    }
+    @include m.tablet { 
+        display: flex;
+        flex-direction: row;
+    }
 }

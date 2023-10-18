@@ -1,0 +1,16 @@
+@use 'base/mixins'as m; //imm
+@use 'base/variables'as v; //imv
+
+.horario{
+    background-image: linear-gradient(to bottom ,v.$primario 0%,v.$primario 50%,transparent 50%)
+    ,url(../img/bg_horarios.jpg);
+    background-repeat: no-repeat;
+    position: center, bottom center;
+    color:v.$blanco;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
